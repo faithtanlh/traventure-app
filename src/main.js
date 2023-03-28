@@ -8,9 +8,9 @@ import './assets/main.css'
 import { createVuetify } from 'vuetify'
 import 'vuetify/styles'
 import '@mdi/font/css/materialdesignicons.css'
+
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
-import VuetifyUseDialog from 'vuetify-use-dialog'
 
 const vuetify = createVuetify({
   components,
@@ -26,5 +26,4 @@ const app = createApp(App)
 app.component('font-awesome-icon', FontAwesomeIcon)
 app.use(router)
 app.use(vuetify)
-app.use(VuetifyUseDialog)
 app.mount('#app')
