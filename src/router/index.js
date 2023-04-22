@@ -1,20 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { getCurrentUser } from '../firebase'
 import DashboardView from '../views/DashboardView.vue'
 import ItineraryView from '../views/ItineraryView.vue'
 import ExploreView from '../views/ExploreView.vue'
-import WishlistView from '../views/WishlistView.vue'
 import LandingPageView from '../views/LandingPageView.vue'
-import { auth } from '../firebase'
-
-// Auth guard
-const requireAuth = (to, from, next) => {
-  let user = auth.currentUser
-  if (!user) {
-    next({ name: 'LandingPage' })
-  } else {
-    next()
-  }
-}
+import ProfileView from '../views/ProfileView.vue'
+import StartPlanningView from '../views/StartPlanningView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -27,28 +18,46 @@ const router = createRouter({
     {
       path: '/dashboard',
       name: 'DashboardPage',
-      component: DashboardView,
-      beforeEnter: requireAuth //route guard
+      component: DashboardView
     },
     {
-      path: '/itinerary',
+      path: '/itinerary/:id',
       name: 'ItineraryPage',
-      component: ItineraryView
+      component: ItineraryView,
+      props: true
     },
     {
-      path: '/explore',
+      path: '/explore/:id',
       name: 'ExplorePage',
       component: ExploreView
     },
     {
-      path: '/wishlist',
-      name: 'WishlistPage',
-      component: WishlistView,
+      path: '/profile',
+      name: 'profile',
+      component: ProfileView
     },
-
+    {
+      path: '/startplanning',
+      name: 'startplanning',
+      component: StartPlanningView
+    }
   ],
   linkActiveClass: 'active',
-  linkExactActiveClass: "exact-active"
+  linkExactActiveClass: 'exact-active'
+})
+
+router.beforeEach(async (to, from, next) => {
+  const user = await getCurrentUser()
+  if (!user && to.name !== 'LandingPage') {
+    next({ name: 'LandingPage' })
+    return
+  } else if (user && to.name == 'LandingPage') {
+    next({ name: 'DashboardPage' })
+    return
+  } else {
+    next()
+    return
+  }
 })
 
 export default router

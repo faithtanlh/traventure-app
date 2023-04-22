@@ -2,59 +2,39 @@
   <div>
     <nav>
       <ul>
-        <RouterLink to="/dashboard">
+        <RouterLink :to="`/itinerary/${props.placeId}`">
           <div class="nav-wrapper">
             <li>
-              <font-awesome-icon icon="fa-solid fa-bars" class="nav-icon"/>
-              <span class="nav-item">Dashboard</span>
-            </li>
-          </div>
-        </RouterLink>
-
-        <RouterLink to="/itinerary">
-          <div class="nav-wrapper">
-            <li>
-              <font-awesome-icon icon="fa-solid fa-calendar-days" class="nav-icon"/>
+              <font-awesome-icon icon="fa-solid fa-calendar-days" class="nav-icon" />
               <span class="nav-item">Itinerary</span>
             </li>
           </div>
         </RouterLink>
 
-        <RouterLink to="/explore">
+        <RouterLink :to="`/explore/${props.placeId}`">
           <div class="nav-wrapper">
             <li>
-              <font-awesome-icon icon="fa-solid fa-compass" class="nav-icon"/>
+              <font-awesome-icon icon="fa-solid fa-compass" class="nav-icon" />
               <span class="nav-item">Explore</span>
-            </li>          
-          </div>
-        </RouterLink>
-
-        <RouterLink to="/wishlist">
-          <div class="nav-wrapper">
-            <li>
-              <font-awesome-icon icon="fa-solid fa-heart" class="nav-icon"/>
-              <span class="nav-item">Wishlist</span>
             </li>
           </div>
         </RouterLink>
-
       </ul>
     </nav>
-  </div>  
+  </div>
 </template>
-
-
 
 <script setup>
 import { RouterLink } from 'vue-router'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCompass, faBars, faCalendarDays, faHeart } from '@fortawesome/free-solid-svg-icons'
+import { faCompass, faBars, faCalendarDays } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faCompass, faBars, faCalendarDays, faHeart)
+library.add(faCompass, faBars, faCalendarDays)
+
+const props = defineProps(['placeId'])
 </script>
 
 <style scoped>
-
 nav {
   background: var(--white-background-primary);
   border-right: 1px solid var(--light-grey-primary);
@@ -99,5 +79,4 @@ a.active .nav-wrapper,
 a.exact-active .nav-wrapper {
   background-color: var(--light-grey-primary);
 }
-
 </style>

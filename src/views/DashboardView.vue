@@ -1,38 +1,29 @@
 <template>
-    <div class="view dashboard-view">
-        <DashboardFeatured />
-        <DashboardTitle />
-        <FolderSection />
-        <TripSection />
-    </div>
-    <v-btn @click="logOut">Log Out</v-btn>
+  <TheHeader />
+  <div id="dashboard-view">
+    <DashboardFeatured />
+    <DashboardTitle />
+    <Suspense>
+      <TripSection />
+    </Suspense>
+
+    <ContextMenu />
+  </div>
 </template>
 
 <script setup>
-import DashboardFeatured from '../components/DashboardPage/DashboardFeatured.vue';
-import DashboardTitle from '../components/DashboardPage/DashboardTitle.vue';
-import FolderSection from '../components/DashboardPage/FolderSection.vue';
-import TripSection from '../components/DashboardPage/TripSection.vue';
-
-import { auth } from '../firebase'
-import { signOut } from 'firebase/auth'
-import router from '@/router'
-
-async function logOut() {
-  try {
-    const user = auth.currentUser
-    const loggedOut = await signOut(auth, user)
-    console.log(loggedOut)
-    router.push({ name: 'LandingPage' })
-  } catch (error) {
-    console.log(error)
-  }
-}
+import TheHeader from '../components/GlobalComponents/TheHeader.vue'
+import DashboardFeatured from '../components/DashboardPage/DashboardFeatured.vue'
+import DashboardTitle from '../components/DashboardPage/DashboardTitle.vue'
+import TripSection from '../components/DashboardPage/TripSection.vue'
 </script>
 
 <style>
-.dashboard-view {
+#dashboard-view {
+  position: relative;
   padding: 30px 60px;
+  top: var(--header-height);
+  margin-left: 6%;
+  margin-right: 6%;
 }
-
 </style>
