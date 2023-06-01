@@ -26,6 +26,8 @@ The COVID-19 pandemic has created numerous challenges for travelers worldwide. W
 
 Our app aims to **provide any traveler, regardless of experience or background, an easier way to plan and manage their trips overseas**. Traventure is a travel itinerary planner web app that aids the decision making process of choosing where to visit, as well as provides users with a consolidated platform to manage their travel itinerary. With the help of our app, **travelers can easily create multiple itineraries, explore different travel destinations, receive recommendations, and store the details of their trip**.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## :date: Overall Timeline
 
 (Work in progress)
