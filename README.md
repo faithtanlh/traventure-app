@@ -1,34 +1,19 @@
-# traventure-app-bt3103
-Our team is working on a final project for BT3103 module. We are building a travel planning app called Traventure. Test
+<br />
+<div align="center">
+  <a href="https://github.com/faithtanlh/NUSinsight">
+    <img src="src/assets/images/logo-black.png" alt="Logo" width="50%">
+  </a>
 
-## Recommended IDE Setup
+  <h3 align="center">Built using Vue.js</h3>
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+  <p align="center">
+    Traventure is a travel planning application that aims to provide higher ease of itinerary planning in groups.
+    <br />
+  </p>
+</div>
 
-## Customize configuration
+<br />
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Product Demo Video
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+(Work in progress)
