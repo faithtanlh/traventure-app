@@ -28,13 +28,5 @@ Our app aims to **provide any traveler, regardless of experience or background, 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## :date: Overall Timeline
-
-(Work in progress)
-
-## Features
-
-(Work in progress)
-
 
 
